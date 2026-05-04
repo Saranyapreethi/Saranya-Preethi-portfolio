@@ -1,0 +1,43 @@
+.projects {
+  background: linear-gradient(135deg, #5b21b6, #2563eb); /* same as hero */
+  color: white;
+  padding: 80px 0;
+}
+
+/* Heading center */
+.projects h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Grid center */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* 🔥 Center ONLY last card */
+.project-grid app-project-card:last-child {
+  grid-column: 1 / -1;     /* take full row */
+  justify-self: center;    /* center horizontally */
+  width: auto;             /* 🔥 prevent stretch */
+}
+.project-grid app-project-card {
+  width: 100%;
+  max-width: 420px;   /* 🔥 control card size */
+}
+
+/* 🔥 IMPORTANT: REMOVE any width/max-width overrides */
+
+
+
+/* Mobile */
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}

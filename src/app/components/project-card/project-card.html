@@ -1,0 +1,18 @@
+<div class="card">
+
+  <h3>{{ title }}</h3>
+
+  <p>{{ desc }}</p>
+
+  <!-- 🔥 THIS MUST BE PRESENT -->
+ <div class="tech-stack" *ngIf="tech && tech.length">
+
+ 
+  <!-- OPTIONAL: keep chips also -->
+  <div class="tech-chips">
+    <strong>Tech Stack: </strong> <span *ngFor="let t of tech">{{ t }}</span> 
+  </div>
+
+</div>
+
+</div>

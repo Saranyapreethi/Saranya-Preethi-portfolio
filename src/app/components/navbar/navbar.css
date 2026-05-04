@@ -1,0 +1,150 @@
+.navbar {
+  position: fixed;   /* stays on top of hero */
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  /* 🔥 GLASS EFFECT */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+/* Layout */
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+/* Logo */
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.8);
+  font-weight: 500;
+  position: relative;
+}
+
+/* 🔥 Hover underline animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: white;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+/* HAMBURGER (hidden by default) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* 🔥 SIDE MENU (MATCH HERO THEME) */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 260px;
+
+    /* ✅ SAME HERO BACKGROUND */
+ background: linear-gradient(135deg, #5b21b6, #174ab7);
+backdrop-filter: blur(15px);
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+    transition: right 0.3s ease;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  /* 🔥 TEXT STYLE */
+  .nav-links a {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  /* REMOVE UNDERLINE ANIMATION ON MOBILE */
+  .nav-links a::after {
+    display: none;
+  }
+  .nav-links a:hover {
+  color: #ffffff;
+  transform: scale(1.05);
+}
+/* BACKGROUND DIM */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.4); /* dark transparent */
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.3s;
+  z-index: 900;
+}
+
+/* WHEN MENU OPEN */
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+/* MAIN CONTENT BLUR */
+.main-content.blur {
+  filter: blur(6px);
+  transform: scale(0.98); /* slight zoom out effect */
+  transition: 0.3s ease;
+}
+}
