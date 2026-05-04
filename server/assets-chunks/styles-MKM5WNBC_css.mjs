@@ -1,0 +1,2 @@
+export default `*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}:root{--primary: #2563eb;--light-blue: #3b82f6;--bg: #f9fafb;--white: #ffffff;--text: #1f2937;--subtext: #6b7280;--border: #e5e7eb}body{background:var(--bg);color:var(--text)}.container{width:90%;max-width:1200px;margin:auto}section{padding:70px 0}html{scroll-behavior:smooth}
+`;
